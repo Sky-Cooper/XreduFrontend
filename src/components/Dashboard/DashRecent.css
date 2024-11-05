@@ -1,0 +1,7 @@
+.transparent-header .MuiDataGrid-row--borderBottom {
+  background-color: transparent !important;
+}
+
+.transparent-header .MuiDataGrid-columnSeparator {
+  display: none !important;
+}
