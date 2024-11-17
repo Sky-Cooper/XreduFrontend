@@ -1,5 +1,4 @@
 import React from "react";
-import { ModeState } from "../generals/Types";
 import { UserRole } from "../generals/Types";
 import { SideBarContent } from "../data/generalData/SideBarContent";
 import IconText from "../components/IconText";
@@ -8,9 +7,6 @@ import SwitchModeInput from "../components/SwitchMode/SwitchModeInput";
 import { useLocation } from "react-router-dom";
 import { useTheme } from "../components/SwitchMode/ThemeContext";
 import { Link } from "react-router-dom";
-import { RoleBasedSections } from "../data/generalData/RoleBasedSections";
-
-//TODO : find a solution where to link each IconText element to its own root
 
 type SideBarProps = {
   userRole: UserRole;

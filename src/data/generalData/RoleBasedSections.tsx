@@ -128,7 +128,6 @@ export const RoleBasedSections: RoleSections[] = [
       {
         label: "Courses",
         subsections: [
-          { text: "Overview", path: "/courses/overview" },
           { text: "Lessons", path: "/courses/lessons" },
           { text: "Add a Lesson", path: "/courses/addlesson" },
         ],
@@ -232,7 +231,7 @@ export const rolePermissions = {
     "/students/details",
     "/dashboard/overview",
     "/dashboard/recentactivities",
-    "/courses/overview",
+
     "/courses/lessons",
     "/courses/addlesson",
     "/reports/activity",

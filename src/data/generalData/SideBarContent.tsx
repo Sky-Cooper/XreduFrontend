@@ -176,7 +176,7 @@ export const SideBarContent: Record<UserRole, SidebarItem[]> = {
 
     {
       text: "Courses",
-      path: "/courses/overview",
+      path: "/courses/lessons",
       icons: {
         lightEnabled: lightEnabledCourses,
         lightDisabled: lightDisabledCourses,

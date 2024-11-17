@@ -51,7 +51,7 @@ export const CoursesColsData: RoleTextImage[] = [
         image: cath,
       },
       {
-        text: "Insitution",
+        text: "Institution",
         image: inst,
       },
     ],
@@ -76,7 +76,7 @@ export const CoursesColsData: RoleTextImage[] = [
         image: cath,
       },
       {
-        text: "Insitution",
+        text: "Institution",
         image: inst,
       },
     ],
@@ -101,7 +101,7 @@ export const CoursesColsData: RoleTextImage[] = [
         image: cath,
       },
       {
-        text: "Insitution",
+        text: "Institution",
         image: inst,
       },
     ],

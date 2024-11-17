@@ -13,6 +13,7 @@ import testImage from "../../assets/Users/profileImages/profimage.webp";
 import { useTheme } from "../SwitchMode/ThemeContext";
 import Faqs from "../Faqs";
 import { PerformanceFaqsData } from "../../data/generalData/FaqsData";
+import { useMemo } from "react";
 
 function ActivityReport({
   role,

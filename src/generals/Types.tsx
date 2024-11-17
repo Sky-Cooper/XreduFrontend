@@ -85,3 +85,14 @@ export type FaqsProps = {
   question: string;
   answer: string;
 };
+
+export type AssignedLessonsProps = {
+  teacher: string;
+  pfpImage: string;
+  courseTitle: string;
+  lessonTitle: string;
+  assignements?: number;
+  qAndA?: number;
+  date: string;
+  time: string;
+};

@@ -1,0 +1,31 @@
+.css-13cnpq9-MuiPickersLayout-root {
+  width: 320px;
+}
+
+.css-13cnpq9-MuiPickersLayout-root .MuiPickersLayout-actionBar {
+  display: none;
+}
+
+.css-6mw38q-MuiTypography-root {
+  display: none;
+}
+
+.css-1s3y67t-MuiTypography-root-MuiDatePickerToolbar-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.css-5hl2qr-MuiTypography-root {
+  display: none;
+}
+
+.css-1tcno5p-MuiTypography-root {
+  display: none;
+}
+
+declare module "@mui/material/styles" {
+  interface ComponentProps<Component,
+  Props > extends Props {
+    sx?: SxProps;
+  }
+}

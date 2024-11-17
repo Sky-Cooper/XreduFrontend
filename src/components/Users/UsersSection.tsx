@@ -182,11 +182,13 @@ function UsersSection({
       <DataContainerBackground data={variantData} size={variantData[0].size} />
 
       <div className="md:col-span-12 border-[0.5px] border-gray-200 rounded-[25px] dark:border-gray-500">
-        <div className="mb-[32px] pt-[32px] pl-[32px]">
-          <h1 className="bg-light-primary-color dark:bg-soft-light-back w-fit py-[16px] px-[32px] rounded-[25px] text-white dark:text-dark-back font-grot font-bold text-base">
-            + Add a new {createUserRole}
-          </h1>
-        </div>
+        {(role === "SuperAdmin" || role === "Admin") && (
+          <div className="mb-[32px] pt-[32px] pl-[32px]">
+            <h1 className="bg-light-primary-color dark:bg-soft-light-back w-fit py-[16px] px-[32px] rounded-[25px] text-white dark:text-dark-back font-grot font-bold text-base">
+              + Add a new {createUserRole}
+            </h1>
+          </div>
+        )}
         <div>
           <DataGrid
             rows={filterdRows}

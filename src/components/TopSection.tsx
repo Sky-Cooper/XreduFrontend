@@ -1,3 +1,4 @@
+import React from "react";
 import lightMore from "../assets/IconTextImages/widgets/lightMode/more.svg";
 import { ModeState } from "../generals/Types";
 import lightNotif from "../assets/IconTextImages/widgets/lightMode/notif.svg";
@@ -11,6 +12,10 @@ import { useTheme } from "./SwitchMode/ThemeContext";
 import { Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { State } from "../generals/Types";
+import Calendar from "./Calender";
+import calender from "../assets/IconTextImages/widgets/calendar.svg";
+import filter from "../assets/IconTextImages/widgets/filter.svg";
+import download from "../assets/IconTextImages/widgets/Download.svg";
 
 type TopSectionProps = {
   sectionTitle: string;
@@ -55,6 +60,12 @@ const TopSection: React.FC<TopSectionProps> = ({
 
   const enabledColor = theme === "light" ? "#004A99" : "#66B0FF";
 
+  const [isCalendarClicked, setCalenderClicker] = useState<boolean>(false);
+
+  function handleClickCalendar() {
+    setCalenderClicker((prevCalenderClicker) => !prevCalenderClicker);
+  }
+
   return (
     <div
       className={`relative md:col-span-12  pt-[32px] ${className ? "" + className : ""}`}
@@ -71,11 +82,13 @@ const TopSection: React.FC<TopSectionProps> = ({
               alt="notif"
               className="w-[28px] h-[28px]"
             />
-            <img
-              src={profileImage}
-              className={`${theme === "light" ? "border-black" : "border-white"} h-[40px] w-[40px] rounded-full border-[1px] object-cover`}
-              alt="profileImage"
-            />
+            <Link to="/settings/profile">
+              <img
+                src={profileImage}
+                className={`${theme === "light" ? "border-black" : "border-white"} h-[40px] w-[40px] rounded-full border-[1px] object-cover`}
+                alt="profileImage"
+              />
+            </Link>
             <img
               src={theme === "light" ? lightMore : darkMore}
               alt="more"
@@ -99,21 +112,39 @@ const TopSection: React.FC<TopSectionProps> = ({
             );
           })}
         </div>
-        <div className="flex flex-row gap-[8px] widgetsItems">
-          {widgetsContent.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className="bg-soft-light-back pl-[16px] pr-[16px] pt-[8px] pb-[8px] rounded-[50px]"
-              >
-                <IconText
-                  textImage={{ image: item.image, text: item.title }}
-                  size="large"
-                  state="widget"
-                />
+        <div className="relative flex flex-row gap-[8px] widgetsItems">
+          <div className="relative bg-soft-light-back pl-[16px] pr-[16px] pt-[8px] pb-[8px] rounded-[50px] flex flex-row items-center gap-[8px]">
+            <img
+              src={calender}
+              alt="widgetIcon"
+              className="w-[20px] h-[20px] cursor-pointer"
+              onClick={handleClickCalendar}
+            />
+            <h3 className="text-base font-medium whitespace-nowrap text-dark-primary-color font-grot">
+              calendar
+            </h3>
+            {isCalendarClicked === true && (
+              <div className="absolute -left-80">
+                <Calendar />
               </div>
-            );
-          })}
+            )}
+          </div>
+          <div className="bg-soft-light-back pl-[16px] pr-[16px] pt-[8px] pb-[8px] rounded-[50px] flex flex-row items-center gap-[8px]">
+            <img src={filter} alt="widgetIcon" className="w-[20px] h-[20px]" />
+            <h3 className="text-base font-medium whitespace-nowrap text-dark-primary-color font-grot">
+              filter
+            </h3>
+          </div>
+          <div className="bg-soft-light-back pl-[16px] pr-[16px] pt-[8px] pb-[8px] rounded-[50px] flex flex-row items-center gap-[8px]">
+            <img
+              src={download}
+              alt="widgetIcon"
+              className="w-[20px] h-[20px]"
+            />
+            <h3 className="text-base font-medium whitespace-nowrap text-dark-primary-color font-grot">
+              download
+            </h3>
+          </div>
         </div>
       </div>
       <div className="relative w-full h-[3px] bg-light-disabled-color dark:bg-dark-disabled-color rounded-full">

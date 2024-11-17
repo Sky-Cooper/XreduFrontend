@@ -14,6 +14,8 @@ import Button from "../../UI/Button";
 
 import { UserRoleAuthorities } from "../../data/generalData/RoleBasedSections";
 
+//TODO : only render the first few rows the data grid , till the user navigate through it
+
 function DashboardRecentActivities({
   role,
   pathToFetch,

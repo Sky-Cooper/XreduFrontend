@@ -78,9 +78,14 @@ type UserProfileDataProps = {
   firstName: string;
   lastName: string;
   institution: string;
-  profileImage: File | string;
+  profileImage: string;
   language: LanguageOptions;
   phoneNumber: string;
+  password: string;
+  status: "Active" | "Inactive";
+  timeZone: string;
+  joinDate: string;
+  emailRecovery: string;
 };
 
 export const UserDataTest: UserProfileDataProps = {
@@ -91,4 +96,69 @@ export const UserDataTest: UserProfileDataProps = {
   profileImage: proImageTest,
   language: "eng",
   phoneNumber: "+212628436082",
+  password: "mouadhoumada1212",
+  status: "Active",
+  timeZone: "Morocco / Casablanca(GMT + 1)",
+  joinDate: "September 14, 2024",
+  emailRecovery: "mouadprr12@gmail.com",
 };
+
+export type TextNotificationProps = {
+  text: string;
+  state: boolean;
+};
+
+export const UserNotificationData: TextNotificationProps[] = [
+  {
+    text: "Teachers uploads",
+    state: true,
+  },
+
+  {
+    text: "New users",
+    state: true,
+  },
+  {
+    text: "Cours uploads",
+    state: false,
+  },
+  {
+    text: "System updates",
+    state: true,
+  },
+
+  {
+    text: "User role updates",
+    state: true,
+  },
+  {
+    text: "Cours uploads",
+    state: false,
+  },
+  {
+    text: "Support requests",
+    state: true,
+  },
+
+  {
+    text: "Storage",
+    state: true,
+  },
+  {
+    text: "User feedback",
+    state: false,
+  },
+  {
+    text: "Account updates",
+    state: true,
+  },
+
+  {
+    text: "Login attemps",
+    state: true,
+  },
+  {
+    text: "Courses updates",
+    state: false,
+  },
+];
